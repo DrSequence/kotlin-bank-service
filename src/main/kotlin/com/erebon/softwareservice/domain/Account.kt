@@ -13,6 +13,8 @@ data class Account(
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         val id: Long = 0L,
 
+        val number: Number = 0,
+
         @JsonProperty("name")
         @Column(name = "name")
         val name: String = "",
