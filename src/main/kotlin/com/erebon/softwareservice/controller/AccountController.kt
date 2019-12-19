@@ -1,7 +1,7 @@
 package com.erebon.softwareservice.controller
 
 import com.erebon.softwareservice.domain.Account
-import com.erebon.softwareservice.service.AccountService
+import com.erebon.softwareservice.service.repoLayer.AccountService
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 

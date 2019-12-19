@@ -21,5 +21,8 @@ data class Account(
 
         @JsonProperty("descr")
         @Column(name = "descr")
-        val descr: String = ""
+        val descr: String = "",
+
+        @OneToMany(mappedBy = "human", cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+        val humans: List<Human>? = emptyList()
 )

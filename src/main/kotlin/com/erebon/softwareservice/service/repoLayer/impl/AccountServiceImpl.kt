@@ -1,8 +1,8 @@
-package com.erebon.softwareservice.service.impl
+package com.erebon.softwareservice.service.repoLayer.impl
 
 import com.erebon.softwareservice.domain.Account
 import com.erebon.softwareservice.repository.AccountRepository
-import com.erebon.softwareservice.service.AccountService
+import com.erebon.softwareservice.service.repoLayer.AccountService
 import org.springframework.stereotype.Service
 import java.util.*
 
