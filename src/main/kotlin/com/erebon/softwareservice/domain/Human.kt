@@ -1,5 +1,6 @@
 package com.erebon.softwareservice.domain
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonProperty
 import javax.persistence.*
 
@@ -29,7 +30,9 @@ data class Human(
         @JsonProperty("phone")
         var phone: String = "",
 
+        @JsonIgnore
         @ManyToOne(fetch = FetchType.LAZY)
+        @JoinColumn(name = "account_id")
         var account: Account? = null
 
 )

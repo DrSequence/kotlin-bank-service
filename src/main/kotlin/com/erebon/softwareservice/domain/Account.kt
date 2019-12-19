@@ -13,6 +13,7 @@ data class Account(
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         val id: Long = 0L,
 
+        @Column(name = "number")
         val number: Number = 0,
 
         @JsonProperty("name")
@@ -23,6 +24,10 @@ data class Account(
         @Column(name = "descr")
         val descr: String = "",
 
-        @OneToMany(mappedBy = "human", cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+        @OneToMany(mappedBy = "account", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
         val humans: List<Human>? = emptyList()
-)
+) {
+        override fun toString(): String {
+                return "{name: ${this.name}, products: ${humans?.map { it->it.name }}}";
+        }
+}
