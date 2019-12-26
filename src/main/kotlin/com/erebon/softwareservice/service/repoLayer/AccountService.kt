@@ -11,7 +11,7 @@ interface AccountService {
 
     fun add(account: Account): Account
 
-    fun edit(id: Long, account: Account): Account
+    fun edit(id: Long, account: Account)
 
     fun remove(id: Long)
 }

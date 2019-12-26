@@ -21,8 +21,8 @@ class AccountServiceImpl(private val accountRepository: AccountRepository) : Acc
         return accountRepository.save(account);
     }
 
-    override fun edit(id: Long, account: Account): Account {
-        return accountRepository.save(account.copy(id = id))
+    override fun edit(id: Long, account: Account) {
+         accountRepository.save(account.copy(id = id))
         // Сохраняем копию объекта с указанным id в БД.
         // Идиоматика Kotlin говорит что НЕ изменяемый - всегда лучше чем изменяемый
         // (никто не поправит значение в другом потоке) и предлагает метод copy для копирования объектов
