@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: bank-service
+  config:
+    name: bank-service
+  cloud:
+    config:
+      uri: http://localhost:8888/
+      username: own_username
+      password: own_password
+  profiles:
+    active: production
