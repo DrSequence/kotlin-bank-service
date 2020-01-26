@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Assertions.assertNotNull
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
+import java.math.BigDecimal
 
 @SpringBootTest
 class ServiceLayerTest {
@@ -17,9 +18,9 @@ class ServiceLayerTest {
 
     @Test
     fun `1 - create account and human and save`() {
-        val sberAccount = Account(0L, 1231313, "Sber", "Sber kopilka")
+        val sberAccount = Account(0L, 1231313, BigDecimal.TEN,"Sber", "Sber kopilka")
 
-        val alfaAccount = Account(0L, 1312343, "Alfa", "Alfa cap")
+        val alfaAccount = Account(0L, 1312343, BigDecimal.TEN, "Alfa", "Alfa cap")
 
         val humanSberFirst = Human(0L, "Ivan", "Ivanov", "Ivanovich",
                 "+79991112233", sberAccount)

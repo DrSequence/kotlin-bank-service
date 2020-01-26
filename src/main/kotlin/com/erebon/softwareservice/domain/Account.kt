@@ -1,6 +1,7 @@
 package com.erebon.softwareservice.domain
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import java.math.BigDecimal
 import javax.persistence.*
 
 @Entity
@@ -16,6 +17,10 @@ data class Account(
         @Column(name = "number")
         val number: Number = 0,
 
+        @JsonProperty("balance")
+        @Column(name = "balance")
+        val balance: BigDecimal = BigDecimal.ZERO,
+
         @JsonProperty("name")
         @Column(name = "name")
         val name: String = "",
@@ -28,6 +33,6 @@ data class Account(
         val humans: List<Human>? = emptyList()
 ) {
         override fun toString(): String {
-                return "{name: ${this.name}, products: ${humans?.map { it->it.name }}}";
+                return "{name: ${this.name}, products: ${humans?.map { it -> it.name }}}";
         }
 }

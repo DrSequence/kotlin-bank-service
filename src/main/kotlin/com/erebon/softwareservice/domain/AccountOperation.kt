@@ -14,6 +14,7 @@ data class AccountOperation(
     val description: String = "",
 
     @OneToOne(mappedBy = "account", cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @JoinColumn(name = "account_id")
     val account: Account? = null
 
 )
