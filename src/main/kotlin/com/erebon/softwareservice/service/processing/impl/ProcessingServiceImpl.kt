@@ -9,9 +9,7 @@ import java.util.*
 @Service
 class ProcessingServiceImpl(private val accountRepository: AccountRepository) : ProcessingService {
 
-    fun findAccountById(id: Long) : Optional<Account> {
-        return accountRepository.findById(id)
-    }
+    fun pay() = null;
 
 
 }
