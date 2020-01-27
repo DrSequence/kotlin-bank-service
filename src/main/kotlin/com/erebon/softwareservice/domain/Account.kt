@@ -30,7 +30,10 @@ data class Account(
         val descr: String = "",
 
         @OneToMany(mappedBy = "account", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-        val humans: List<Human>? = emptyList()
+        val humans: List<Human>? = emptyList(),
+
+        @OneToMany(mappedBy = "account", cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+        val operations: List<AccountOperation> = emptyList()
 ) {
         override fun toString(): String {
                 return "{name: ${this.name}, products: ${humans?.map { it -> it.name }}}";

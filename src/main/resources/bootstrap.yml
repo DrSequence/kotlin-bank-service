@@ -1,6 +1,9 @@
 spring:
   application:
     name: bank-service
+  profiles:
+    active: dev
+
   config:
     name: bank-service
   cloud:
@@ -8,5 +11,3 @@ spring:
       uri: http://localhost:8888/
       username: own_username
       password: own_password
-  profiles:
-    active: production

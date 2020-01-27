@@ -13,7 +13,7 @@ data class AccountOperation(
     @Column(name = "descr")
     var description: String = "",
 
-    @OneToOne(mappedBy = "account", cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @ManyToOne(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
     @JoinColumn(name = "account_id")
     var account: Account? = null
 
